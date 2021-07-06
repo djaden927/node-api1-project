@@ -13,7 +13,7 @@ server.post('/api/users', (req, res) => {
         const { name, bio } = req.body
         User.insert({name, bio})
             .then(user => {
-                res.status(201).json({ message: user})
+                res.status(201).json(user)
             })
             .catch(err => {
                 res.status(500).json({ message: err.message})
